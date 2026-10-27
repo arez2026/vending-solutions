@@ -5,9 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vending Solutions México — Máquinas vending para empresas y corporativos</title>
   <meta name="description" content="Distribuidores de máquinas vending de botana mixta y refrigerada para negocios y corporativos en CDMX. Instalación, mantenimiento y surtido sin costo." />
+  <link rel="canonical" href="https://vendingsolutions.mx/" />
+  <meta name="theme-color" content="#0D2472" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="img/icon-512.png" />
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+
+  <!-- Vista previa al compartir (WhatsApp, Facebook, LinkedIn) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_MX" />
+  <meta property="og:site_name" content="Vending Solutions México" />
+  <meta property="og:title" content="Vending Solutions México — Máquinas vending para tu empresa" />
+  <meta property="og:description" content="Instalamos máquinas de botana mixta y refrigerada en tu empresa sin inversión. Mantenimiento y surtido incluidos. CDMX y área metropolitana." />
+  <meta property="og:url" content="https://vendingsolutions.mx/" />
+  <meta property="og:image" content="https://vendingsolutions.mx/img/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Datos de negocio local para Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Vending Solutions México",
+    "description": "Distribuidores de máquinas vending de botana mixta y refrigerada para negocios y corporativos.",
+    "url": "https://vendingsolutions.mx/",
+    "logo": "https://vendingsolutions.mx/img/logo.png",
+    "image": "https://vendingsolutions.mx/img/og-image.jpg",
+    "telephone": "+52 55 8038 7757",
+    "email": "alvaroe@vendingsolutions.mx",
+    "address": { "@type": "PostalAddress", "addressLocality": "Ciudad de México", "addressRegion": "CDMX", "addressCountry": "MX" },
+    "areaServed": ["Ciudad de México", "Estado de México"],
+    "priceRange": "$$"
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.48.0/dist/tabler-icons.min.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -35,7 +71,7 @@
       background: var(--blue-mid);
       color: white;
       text-align: center;
-      padding: 10px 1rem;
+      padding: 10px 2.75rem;
       font-size: 13px;
       font-weight: 500;
       position: relative;
@@ -47,7 +83,7 @@
     /* NAV */
     nav { background: white; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 200; box-shadow: 0 1px 8px rgba(0,0,0,0.06); }
     .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-    .nav-logo img { height: 48px; width: auto; }
+    .nav-logo img { height: 52px; width: auto; }
     .nav-links { display: flex; gap: 1.5rem; list-style: none; }
     .nav-links a { font-size: 14px; color: var(--text-muted); font-weight: 500; transition: color 0.2s; white-space: nowrap; }
     .nav-links a:hover { color: var(--blue-mid); }
@@ -56,13 +92,13 @@
     .nav-phone i { color: var(--blue-mid); }
     .nav-cta { background: var(--blue-mid); color: white; padding: 9px 20px; border-radius: var(--radius-sm); font-size: 13px; font-weight: 700; transition: background 0.2s; white-space: nowrap; }
     .nav-cta:hover { background: var(--blue-dark); }
-    .hamburger { display: none; background: none; border: none; cursor: pointer; font-size: 24px; color: var(--text); }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; font-size: 24px; color: var(--text); padding: 6px; }
 
     /* HERO VIDEO */
     .hero {
       position: relative;
-      height: 88vh;
-      min-height: 560px;
+      min-height: max(88vh, 560px);
+      padding: 4rem 0;
       display: flex;
       align-items: center;
       overflow: hidden;
@@ -98,7 +134,6 @@
       align-items: center;
       width: 100%;
     }
-    .hero-left img.hero-logo { height: 90px; width: auto; margin-bottom: 1.75rem; }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 6px;
       background: rgba(255,255,255,0.12); color: #bfdbfe;
@@ -137,6 +172,11 @@
     .hero-card-form button:hover { background: var(--blue-dark); }
     .hero-card-note { font-size: 11px; color: var(--text-muted); text-align: center; margin-top: 8px; }
 
+    /* MENSAJES DE FORMULARIO */
+    .form-status { display: none; font-size: 14px; line-height: 1.5; padding: 12px 14px; border-radius: var(--radius-sm); margin-top: 10px; }
+    .form-status.ok { display: block; background: #DCFCE7; color: #14532D; }
+    .form-status.error { display: block; background: #FEE2E2; color: #7F1D1D; }
+
     /* STATS BAR */
     .stats-bar { background: var(--blue-dark); padding: 2.5rem 1.5rem; }
     .stats-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; text-align: center; }
@@ -163,8 +203,8 @@
     .catalog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
     .catalog-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; display: flex; flex-direction: column; }
     .catalog-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(13,36,114,0.12); }
-    .catalog-photo { position: relative; height: 230px; overflow: hidden; background: var(--bg-soft); }
-    .catalog-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+    .catalog-photo { position: relative; height: 280px; overflow: hidden; background: #F3F4F6; }
+    .catalog-photo img { width: 100%; height: 100%; object-fit: contain; padding: 40px 12px 8px; transition: transform 0.4s; }
     .catalog-card:hover .catalog-photo img { transform: scale(1.05); }
     .catalog-brand-badge { position: absolute; top: 12px; left: 12px; background: var(--blue-dark); color: white; font-size: 10px; font-weight: 800; padding: 4px 10px; border-radius: 99px; letter-spacing: 1px; }
     .catalog-type-badge { position: absolute; top: 12px; right: 12px; background: white; color: var(--blue-mid); font-size: 10px; font-weight: 800; padding: 4px 10px; border-radius: 99px; border: 1px solid var(--blue-pale); }
@@ -289,7 +329,8 @@
     /* FOOTER */
     footer { background: #060e2e; color: rgba(255,255,255,0.5); padding: 4rem 2rem 2rem; }
     .footer-top { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 2rem; }
-    .footer-logo img { height: 60px; width: auto; filter: brightness(0) invert(1); margin-bottom: 1rem; }
+    .footer-logo { display: inline-block; background: white; border-radius: var(--radius-sm); padding: 10px 14px; margin-bottom: 1rem; }
+    .footer-logo img { height: 52px; width: auto; }
     .footer-desc { font-size: 14px; line-height: 1.7; max-width: 280px; }
     .footer-col h4 { font-size: 13px; font-weight: 700; color: white; margin-bottom: 1.25rem; letter-spacing: 0.5px; }
     .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
@@ -308,8 +349,10 @@
     .fba-quote { background: #fde047; color: var(--blue-dark); }
 
     /* WA FLOAT */
-    .wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 400; background: #25D366; color: white; width: 62px; height: 62px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 20px rgba(37,211,102,0.5); transition: transform 0.2s; text-decoration: none; }
+    .wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 400; background: #25D366; color: white; width: 62px; height: 62px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 20px rgba(37,211,102,0.5); transition: transform 0.2s, opacity 0.3s; text-decoration: none; }
     .wa-float:hover { transform: scale(1.1); }
+    /* cuando aparece la barra inferior, el botón flotante se oculta (la barra ya trae WhatsApp) */
+    body.bar-visible .wa-float { opacity: 0; pointer-events: none; }
 
     /* RESPONSIVE */
     @media (max-width: 1024px) {
@@ -317,8 +360,9 @@
       .benefits-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 900px) {
-      .hero-content { grid-template-columns: 1fr; }
-      .hero-card { display: none; }
+      .hero-content { grid-template-columns: 1fr; gap: 2.5rem; padding: 0 1.25rem; }
+      .hero-video-wrap { display: none; }
+      .hero-card { padding: 1.5rem; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .process-wrap { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
       .process-wrap::before { display: none; }
@@ -328,6 +372,8 @@
       .contact-grid { grid-template-columns: 1fr; }
       .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
       .nav-links { display: none; }
+      .nav-links.open { display: flex; flex-direction: column; gap: 0; position: absolute; top: 100%; left: 0; right: 0; background: white; border-bottom: 1px solid var(--border); box-shadow: 0 12px 24px rgba(0,0,0,0.08); padding: 0.5rem 1.5rem 1rem; }
+      .nav-links.open a { display: block; padding: 12px 0; font-size: 16px; border-bottom: 1px solid var(--border); }
       .hamburger { display: block; }
       .nav-cta { display: none; }
       .nav-phone { display: none; }
@@ -340,6 +386,13 @@
       .form-row { grid-template-columns: 1fr; }
       .footer-top { grid-template-columns: 1fr; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .top-banner a { display: inline-block; margin-left: 0; }
+      .hero-trust { gap: 0.5rem 1.25rem; }
+      .float-bar { padding: 10px 1rem; }
+      .float-bar-text { display: none; }
+      .float-bar-actions { width: 100%; }
+      .float-bar-actions a { flex: 1; justify-content: center; text-align: center; }
+      footer { padding-bottom: 5.5rem; }
     }
   </style>
 </head>
@@ -349,16 +402,16 @@
 <div class="top-banner" id="topBanner">
   <strong>¡Instalación GRATIS!</strong> Sin contrato forzoso · Mantenimiento incluido · Surtido constante
   <a href="#contacto">Solicitar ahora →</a>
-  <button class="top-banner-close" onclick="document.getElementById('topBanner').style.display='none'"><i class="ti ti-x"></i></button>
+  <button class="top-banner-close" aria-label="Cerrar aviso" onclick="document.getElementById('topBanner').style.display='none'"><i class="ti ti-x"></i></button>
 </div>
 
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <div class="nav-logo">
-      <img src="logo.png" alt="Vending Solutions México" />
-    </div>
-    <ul class="nav-links">
+    <a href="#" class="nav-logo" aria-label="Vending Solutions México — inicio">
+      <img src="img/logo.png" alt="Vending Solutions México" width="144" height="52" />
+    </a>
+    <ul class="nav-links" id="navLinks">
       <li><a href="#maquinas">Máquinas</a></li>
       <li><a href="#beneficios">Beneficios</a></li>
       <li><a href="#proceso">Cómo funciona</a></li>
@@ -370,25 +423,25 @@
       <span class="nav-phone"><i class="ti ti-phone-call"></i> +52 55 8038 7757</span>
       <a href="#contacto" class="nav-cta">Cotización gratis</a>
     </div>
-    <button class="hamburger" aria-label="Menú"><i class="ti ti-menu-2"></i></button>
+    <button class="hamburger" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks"><i class="ti ti-menu-2"></i></button>
   </div>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
   <div class="hero-video-wrap">
-    <iframe src="https://www.youtube.com/embed/VvqLB3MXI2Y?autoplay=1&mute=1&loop=1&playlist=VvqLB3MXI2Y&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&start=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <!-- el video solo se carga en pantallas grandes (ver script al final) -->
+    <iframe data-src="https://www.youtube-nocookie.com/embed/VvqLB3MXI2Y?autoplay=1&mute=1&loop=1&playlist=VvqLB3MXI2Y&controls=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1" title="Video de fondo: máquinas vending" tabindex="-1" aria-hidden="true" allow="autoplay; encrypted-media"></iframe>
   </div>
   <div class="hero-video-overlay"></div>
   <div class="hero-content">
     <div class="hero-left">
-      <img src="logo.png" alt="Vending Solutions México" class="hero-logo" />
       <div class="hero-badge"><i class="ti ti-map-pin" style="font-size:12px"></i> CDMX y Área Metropolitana</div>
       <h1>Máquinas vending para tu <span>empresa o corporativo</span></h1>
       <p class="hero-desc">Distribuimos e instalamos máquinas de botana mixta y refrigerada en tu empresa. Sin inversión, sin contratos, sin complicaciones.</p>
       <div class="hero-btns">
         <a href="#contacto" class="btn-hero-primary">Solicitar cotización gratis</a>
-        <a href="https://wa.me/525580387757?text=Hola,%20me%20interesa%20una%20máquina%20vending" target="_blank" class="btn-hero-wa"><i class="ti ti-brand-whatsapp"></i> WhatsApp</a>
+        <a href="https://wa.me/525580387757?text=Hola,%20me%20interesa%20una%20máquina%20vending" target="_blank" rel="noopener" class="btn-hero-wa"><i class="ti ti-brand-whatsapp"></i> WhatsApp</a>
       </div>
       <div class="hero-trust">
         <div class="hero-trust-item"><i class="ti ti-check"></i> Instalación gratuita</div>
@@ -399,12 +452,14 @@
     </div>
     <div class="hero-card">
       <h3>Solicita tu cotización</h3>
-      <p>Respuesta en menos de 2 horas en horario hábil</p>
-      <form class="hero-card-form" action="https://formspree.io/f/xzdlpnrn" method="POST">
-        <input type="text" name="nombre" placeholder="Tu nombre" required />
-        <input type="text" name="empresa" placeholder="Nombre de tu empresa" />
-        <input type="tel" name="telefono" placeholder="Teléfono de contacto" />
-        <select name="tipo">
+      <p>Déjanos tus datos y te contactamos para armar tu propuesta.</p>
+      <form class="hero-card-form js-form" action="https://formspree.io/f/xzdlpnrn" method="POST">
+        <input type="hidden" name="_subject" value="Nueva cotización desde vendingsolutions.mx (hero)" />
+        <input type="text" name="nombre" placeholder="Tu nombre" aria-label="Tu nombre" autocomplete="name" required />
+        <input type="text" name="empresa" placeholder="Nombre de tu empresa" aria-label="Nombre de tu empresa" autocomplete="organization" />
+        <input type="email" name="email" placeholder="Correo electrónico" aria-label="Correo electrónico" autocomplete="email" required />
+        <input type="tel" name="telefono" placeholder="Teléfono de contacto" aria-label="Teléfono de contacto" autocomplete="tel" />
+        <select name="tipo" aria-label="Tipo de máquina de interés">
           <option value="">Tipo de máquina de interés</option>
           <option>Máquina de botana mixta</option>
           <option>Máquina refrigerada</option>
@@ -412,6 +467,7 @@
           <option>No sé / necesito asesoría</option>
         </select>
         <button type="submit">Enviar cotización <i class="ti ti-arrow-right"></i></button>
+        <p class="form-status" role="status"></p>
       </form>
       <p class="hero-card-note"><i class="ti ti-lock" style="font-size:11px"></i> Tus datos están seguros. Sin spam.</p>
     </div>
@@ -422,16 +478,16 @@
 <div class="stats-bar">
   <div class="stats-grid">
     <div class="stat-item">
-      <div class="stat-num" data-target="50">0</div>
+      <div class="stat-num" data-target="50">+50</div>
       <div class="stat-label">Clientes satisfechos</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num" data-target="200">0</div>
-      <div class="stat-label">Máquinas instaladas</div>
+      <div class="stat-num">6</div>
+      <div class="stat-label">Modelos de máquina</div>
     </div>
     <div class="stat-item">
       <div class="stat-num">24/7</div>
-      <div class="stat-label">Disponibilidad</div>
+      <div class="stat-label">Tu equipo compra a cualquier hora</div>
     </div>
     <div class="stat-item">
       <div class="stat-num">$0</div>
@@ -446,8 +502,8 @@
     <div class="trust-item"><i class="ti ti-shield-check"></i> Instalación en 48 hrs</div>
     <div class="trust-item"><i class="ti ti-tools"></i> Mantenimiento sin costo</div>
     <div class="trust-item"><i class="ti ti-refresh"></i> Surtido constante</div>
-    <div class="trust-item"><i class="ti ti-credit-card"></i> Efectivo, tarjeta y NFC</div>
-    <div class="trust-item"><i class="ti ti-headset"></i> Soporte 24/7</div>
+    <div class="trust-item"><i class="ti ti-credit-card"></i> Efectivo y tarjeta</div>
+    <div class="trust-item"><i class="ti ti-brand-whatsapp"></i> Atención por WhatsApp</div>
   </div>
 </div>
 
@@ -463,7 +519,7 @@
 
       <div class="catalog-card">
         <div class="catalog-photo">
-          <img src="https://coincitymexico.com/web/image/product.image/3/image_1024/Lateral.webp?unique=3336720" alt="Hibou 52 Mixta" onerror="this.src='https://images.unsplash.com/photo-1621339576931-25e2cae4d2f7?auto=format&fit=crop&w=800&q=80'" />
+          <img src="img/hibou-52-mixta.webp" alt="Máquina Hibou 52 Mixta" loading="lazy" width="700" height="700" />
           <span class="catalog-brand-badge">HIBOU</span>
           <span class="catalog-type-badge">BOTANA MIXTA</span>
         </div>
@@ -473,19 +529,19 @@
           <div class="catalog-specs">
             <div class="catalog-spec"><i class="ti ti-package"></i> 52 posiciones</div>
             <div class="catalog-spec"><i class="ti ti-credit-card"></i> Tarjeta y efectivo</div>
-            <div class="catalog-spec"><i class="ti ti-device-mobile"></i> Pago NFC</div>
-            <div class="catalog-spec"><i class="ti ti-wifi"></i> Monitoreo remoto</div>
+            <div class="catalog-spec"><i class="ti ti-refresh"></i> Surtido incluido</div>
+            <div class="catalog-spec"><i class="ti ti-tools"></i> Mantenimiento incluido</div>
           </div>
           <div class="catalog-cta">
             <a href="#contacto" class="btn-catalog-primary">Solicitar cotización</a>
-            <a href="https://wa.me/525580387757" target="_blank" class="btn-catalog-wa"><i class="ti ti-brand-whatsapp"></i></a>
+            <a href="https://wa.me/525580387757" target="_blank" rel="noopener" class="btn-catalog-wa"><i class="ti ti-brand-whatsapp"></i></a>
           </div>
         </div>
       </div>
 
       <div class="catalog-card">
         <div class="catalog-photo">
-          <img src="https://coincitymexico.com/web/image/product.image/55/image_1024/Hibou%2060%20Bebidas%20Persona.webp?unique=c0761ce" alt="Hibou Pro Refrigerada" onerror="this.src='https://images.unsplash.com/photo-1527960471264-932f39eb5846?auto=format&fit=crop&w=800&q=80'" />
+          <img src="img/hibou-pro-refrigerada.webp" alt="Máquina Hibou Pro Refrigerada" loading="lazy" width="700" height="700" />
           <span class="catalog-brand-badge">HIBOU</span>
           <span class="catalog-type-badge">REFRIGERADA</span>
         </div>
@@ -496,18 +552,18 @@
             <div class="catalog-spec"><i class="ti ti-temperature-minus"></i> Temp. controlada</div>
             <div class="catalog-spec"><i class="ti ti-device-tablet"></i> Pantalla 22"</div>
             <div class="catalog-spec"><i class="ti ti-credit-card"></i> Tarjeta y efectivo</div>
-            <div class="catalog-spec"><i class="ti ti-wifi"></i> Monitoreo remoto</div>
+            <div class="catalog-spec"><i class="ti ti-tools"></i> Mantenimiento incluido</div>
           </div>
           <div class="catalog-cta">
             <a href="#contacto" class="btn-catalog-primary">Solicitar cotización</a>
-            <a href="https://wa.me/525580387757" target="_blank" class="btn-catalog-wa"><i class="ti ti-brand-whatsapp"></i></a>
+            <a href="https://wa.me/525580387757" target="_blank" rel="noopener" class="btn-catalog-wa"><i class="ti ti-brand-whatsapp"></i></a>
           </div>
         </div>
       </div>
 
       <div class="catalog-card">
         <div class="catalog-photo">
-          <img src="https://coincitymexico.com/web/image/product.image/31/image_1024/Combo%2039%20AMS%20Lateral.webp?unique=324f786" alt="AMS Combo 39" onerror="this.src='https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=800&q=80'" />
+          <img src="img/ams-combo-39.webp" alt="Máquina AMS Combo 39" loading="lazy" width="700" height="700" />
           <span class="catalog-brand-badge">AMS</span>
           <span class="catalog-type-badge">COMBO</span>
         </div>
@@ -522,36 +578,36 @@
           </div>
           <div class="catalog-cta">
             <a href="#contacto" class="btn-catalog-primary">Solicitar cotización</a>
-            <a href="https://wa.me/525580387757" target="_blank" class="btn-catalog-wa"><i class="ti ti-brand-whatsapp"></i></a>
+            <a href="https://wa.me/525580387757" target="_blank" rel="noopener" class="btn-catalog-wa"><i class="ti ti-brand-whatsapp"></i></a>
           </div>
         </div>
       </div>
 
       <div class="catalog-card">
         <div class="catalog-photo">
-          <img src="https://coincitymexico.com/web/image/product.image/57/image_1024/Hibou%2060%20Ambiente%20Persona.webp?unique=8a10bbe" alt="Jofemar Vision Plus" onerror="this.src='https://images.unsplash.com/photo-1601598851547-4302969d0614?auto=format&fit=crop&w=800&q=80'" />
+          <img src="img/jofemar-vision-plus.webp" alt="Máquina Jofemar Vision Plus" loading="lazy" width="700" height="700" />
           <span class="catalog-brand-badge">JOFEMAR</span>
           <span class="catalog-type-badge">PREMIUM</span>
         </div>
         <div class="catalog-body">
           <h3>Vision Plus Refrigerada</h3>
-          <p>Máquina refrigerada de alta gama con tecnología avanzada. La opción premium para corporativos exigentes.</p>
+          <p>Máquina refrigerada de alta gama para alimentos frescos, ensaladas y bebidas. La opción premium para corporativos.</p>
           <div class="catalog-specs">
             <div class="catalog-spec"><i class="ti ti-star"></i> Alta gama</div>
-            <div class="catalog-spec"><i class="ti ti-temperature-minus"></i> Refrigeración premium</div>
-            <div class="catalog-spec"><i class="ti ti-credit-card"></i> Todos los pagos</div>
-            <div class="catalog-spec"><i class="ti ti-wifi"></i> IoT conectada</div>
+            <div class="catalog-spec"><i class="ti ti-temperature-minus"></i> Refrigerada</div>
+            <div class="catalog-spec"><i class="ti ti-credit-card"></i> Tarjeta y efectivo</div>
+            <div class="catalog-spec"><i class="ti ti-salad"></i> Alimentos frescos</div>
           </div>
           <div class="catalog-cta">
             <a href="#contacto" class="btn-catalog-primary">Solicitar cotización</a>
-            <a href="https://wa.me/525580387757" target="_blank" class="btn-catalog-wa"><i class="ti ti-brand-whatsapp"></i></a>
+            <a href="https://wa.me/525580387757" target="_blank" rel="noopener" class="btn-catalog-wa"><i class="ti ti-brand-whatsapp"></i></a>
           </div>
         </div>
       </div>
 
       <div class="catalog-card">
         <div class="catalog-photo">
-          <img src="https://coincitymexico.com/web/image/product.image/33/image_1024/Cool%20Locker%20Vending%20Comida.webp?unique=613aee5" alt="Cool Locker" onerror="this.src='https://images.unsplash.com/photo-1527960471264-932f39eb5846?auto=format&fit=crop&w=800&q=80'" />
+          <img src="img/cool-locker.webp" alt="Máquina Cool Locker" loading="lazy" width="700" height="700" />
           <span class="catalog-brand-badge">IMP</span>
           <span class="catalog-type-badge">LOCKER</span>
         </div>
@@ -566,29 +622,29 @@
           </div>
           <div class="catalog-cta">
             <a href="#contacto" class="btn-catalog-primary">Solicitar cotización</a>
-            <a href="https://wa.me/525580387757" target="_blank" class="btn-catalog-wa"><i class="ti ti-brand-whatsapp"></i></a>
+            <a href="https://wa.me/525580387757" target="_blank" rel="noopener" class="btn-catalog-wa"><i class="ti ti-brand-whatsapp"></i></a>
           </div>
         </div>
       </div>
 
       <div class="catalog-card">
         <div class="catalog-photo">
-          <img src="https://coincitymexico.com/web/image/product.image/59/image_1024/Hibou%2060%20Configuracio%CC%81n%20Especial%20Lateral.webp?unique=774c00b" alt="Vendo 821 Refresh" onerror="this.src='https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=800&q=80'" />
+          <img src="img/vendo-821-refresh.webp" alt="Máquina Vendo 821 Refresh" loading="lazy" width="700" height="700" />
           <span class="catalog-brand-badge">VENDO</span>
           <span class="catalog-type-badge">BEBIDAS</span>
         </div>
         <div class="catalog-body">
           <h3>821 Refresh</h3>
-          <p>Especializada en bebidas frías con mecanismo Refresh. Alta velocidad de despacho y bajo consumo energético.</p>
+          <p>Máquina especializada en bebidas frías en lata y botella. Robusta y de gran capacidad para áreas de alto tráfico.</p>
           <div class="catalog-specs">
             <div class="catalog-spec"><i class="ti ti-droplet"></i> Solo bebidas</div>
-            <div class="catalog-spec"><i class="ti ti-bolt"></i> Bajo consumo</div>
-            <div class="catalog-spec"><i class="ti ti-rocket"></i> Despacho rápido</div>
-            <div class="catalog-spec"><i class="ti ti-credit-card"></i> Todos los pagos</div>
+            <div class="catalog-spec"><i class="ti ti-temperature-minus"></i> Bebidas frías</div>
+            <div class="catalog-spec"><i class="ti ti-refresh"></i> Surtido incluido</div>
+            <div class="catalog-spec"><i class="ti ti-credit-card"></i> Tarjeta y efectivo</div>
           </div>
           <div class="catalog-cta">
             <a href="#contacto" class="btn-catalog-primary">Solicitar cotización</a>
-            <a href="https://wa.me/525580387757" target="_blank" class="btn-catalog-wa"><i class="ti ti-brand-whatsapp"></i></a>
+            <a href="https://wa.me/525580387757" target="_blank" rel="noopener" class="btn-catalog-wa"><i class="ti ti-brand-whatsapp"></i></a>
           </div>
         </div>
       </div>
@@ -602,7 +658,7 @@
   <div class="container">
     <p>Equipo e infraestructura suministrada por</p>
     <h3>Coin City México — La única tienda vending en línea</h3>
-    <a href="https://coincitymexico.com" target="_blank"><i class="ti ti-external-link"></i> Ver catálogo completo</a>
+    <a href="https://coincitymexico.com" target="_blank" rel="noopener"><i class="ti ti-external-link"></i> Ver catálogo completo</a>
   </div>
 </div>
 
@@ -623,22 +679,22 @@
       <div class="benefit-card">
         <div class="benefit-icon-wrap"><i class="ti ti-tools"></i></div>
         <h3>Mantenimiento incluido</h3>
-        <p>Limpieza, reparaciones y servicio técnico sin costo adicional. Respondemos en 24 hrs.</p>
+        <p>Limpieza, reparaciones y servicio técnico sin costo adicional para tu empresa.</p>
       </div>
       <div class="benefit-card">
         <div class="benefit-icon-wrap"><i class="ti ti-refresh"></i></div>
         <h3>Surtido constante</h3>
-        <p>Reabastecemos periódicamente. Monitoreamos el inventario en tiempo real.</p>
+        <p>Reabastecemos periódicamente para que nunca falten tus productos favoritos.</p>
       </div>
       <div class="benefit-card">
         <div class="benefit-icon-wrap"><i class="ti ti-credit-card"></i></div>
         <h3>Múltiples pagos</h3>
-        <p>Efectivo, tarjeta de crédito/débito y pago sin contacto NFC. Para todos tus colaboradores.</p>
+        <p>Efectivo y tarjeta de crédito o débito, para que nadie tenga que cargar cambio.</p>
       </div>
       <div class="benefit-card">
-        <div class="benefit-icon-wrap"><i class="ti ti-chart-bar"></i></div>
-        <h3>Reportes de consumo</h3>
-        <p>Seguimiento de ventas y productos más populares. Datos en tiempo real.</p>
+        <div class="benefit-icon-wrap"><i class="ti ti-adjustments"></i></div>
+        <h3>Surtido a tu medida</h3>
+        <p>Ajustamos los productos a lo que más le gusta a tu equipo: snacks, bebidas o alimentos frescos.</p>
       </div>
       <div class="benefit-card">
         <div class="benefit-icon-wrap"><i class="ti ti-clock-24"></i></div>
@@ -693,21 +749,21 @@
     <div class="clients-grid">
       <div class="client-card">
         <div class="client-logo-wrap">
-          <img src="palacio.png" alt="Palacio de Hierro" />
+          <img src="img/palacio.png" alt="El Palacio de Hierro" loading="lazy" />
         </div>
         <p>Tienda departamental de lujo líder en México con presencia en las principales ciudades del país.</p>
         <span class="client-badge">CLIENTE ACTIVO</span>
       </div>
       <div class="client-card">
         <div class="client-logo-wrap">
-          <img src="https://www.wolfsellers.com/logo.svg" alt="WolfSellers" onerror="this.outerHTML='<span style=\'font-size:20px;font-weight:800;color:#111\'>WolfSellers</span>'" />
+          <img src="img/wolfsellers.svg" alt="WolfSellers" loading="lazy" />
         </div>
         <p>Adobe Experience Cloud Gold Partner con más de 10 años de experiencia en Commerce & CX en LATAM.</p>
         <span class="client-badge">CLIENTE ACTIVO</span>
       </div>
       <div class="client-card">
         <div class="client-logo-wrap" style="background:#1a1a1a; border-radius:10px; padding:10px;">
-          <img src="https://hacienda.club/wp-content/uploads/2026/02/golf-logo.png" alt="Hacienda Club" onerror="this.outerHTML='<span style=\'font-size:18px;font-weight:800;color:white;letter-spacing:2px\'>HACIENDA CLUB</span>'" />
+          <img src="img/hacienda-club.png" alt="Club de Golf La Hacienda" loading="lazy" />
         </div>
         <p>Club de golf privado en Ciudad López Mateos con instalaciones de clase mundial.</p>
         <span class="client-badge">CLIENTE ACTIVO</span>
@@ -726,35 +782,35 @@
     </div>
     <div class="sectors-grid">
       <div class="sector-card">
-        <div class="sector-photo"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80" alt="Corporativos" /></div>
+        <div class="sector-photo"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80" alt="Corporativos" loading="lazy" /></div>
         <div class="sector-body"><i class="ti ti-building-skyscraper"></i><h3>Corporativos</h3></div>
       </div>
       <div class="sector-card">
-        <div class="sector-photo"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" alt="Fábricas" /></div>
+        <div class="sector-photo"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" alt="Fábricas" loading="lazy" /></div>
         <div class="sector-body"><i class="ti ti-building-factory-2"></i><h3>Fábricas y plantas</h3></div>
       </div>
       <div class="sector-card">
-        <div class="sector-photo"><img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=600&q=80" alt="Escuelas" /></div>
+        <div class="sector-photo"><img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=600&q=80" alt="Escuelas" loading="lazy" /></div>
         <div class="sector-body"><i class="ti ti-school"></i><h3>Escuelas</h3></div>
       </div>
       <div class="sector-card">
-        <div class="sector-photo"><img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=600&q=80" alt="Clínicas" /></div>
+        <div class="sector-photo"><img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=600&q=80" alt="Clínicas" loading="lazy" /></div>
         <div class="sector-body"><i class="ti ti-heart-rate-monitor"></i><h3>Clínicas y hospitales</h3></div>
       </div>
       <div class="sector-card">
-        <div class="sector-photo"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80" alt="Gimnasios" /></div>
+        <div class="sector-photo"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80" alt="Gimnasios" loading="lazy" /></div>
         <div class="sector-body"><i class="ti ti-barbell"></i><h3>Gimnasios</h3></div>
       </div>
       <div class="sector-card">
-        <div class="sector-photo"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80" alt="Hoteles" /></div>
+        <div class="sector-photo"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80" alt="Hoteles" loading="lazy" /></div>
         <div class="sector-body"><i class="ti ti-building"></i><h3>Hoteles</h3></div>
       </div>
       <div class="sector-card">
-        <div class="sector-photo"><img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=600&q=80" alt="Plazas" /></div>
+        <div class="sector-photo"><img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=600&q=80" alt="Plazas" loading="lazy" /></div>
         <div class="sector-body"><i class="ti ti-shopping-cart"></i><h3>Plazas comerciales</h3></div>
       </div>
       <div class="sector-card">
-        <div class="sector-photo"><img src="https://images.unsplash.com/photo-1562016600-ece13e8ba570?auto=format&fit=crop&w=600&q=80" alt="Agencias" /></div>
+        <div class="sector-photo"><img src="https://images.unsplash.com/photo-1562016600-ece13e8ba570?auto=format&fit=crop&w=600&q=80" alt="Agencias" loading="lazy" /></div>
         <div class="sector-body"><i class="ti ti-car"></i><h3>Agencias automotrices</h3></div>
       </div>
     </div>
@@ -771,27 +827,27 @@
     </div>
     <div class="testimonials-grid">
       <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"Instalaron la máquina en menos de 48 horas y nunca nos ha fallado. El surtido es constante y variado. Mis empleados están muy contentos."</p>
+        <div class="testimonial-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <p class="testimonial-text">“Desde que instalamos las máquinas de Vending Solutions, nuestros colaboradores tienen una opción práctica para comprar bebidas y snacks sin salir de las instalaciones. Las máquinas están bien surtidas, son fáciles de usar y el servicio de reposición ha sido muy bueno. Sin duda, una excelente solución para nuestras oficinas.”</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar">MR</div>
-          <div><p class="testimonial-name">María Rodríguez</p><p class="testimonial-role">Gerente de RH · Corporativo</p></div>
+          <div><p class="testimonial-name">Mariana R.</p><p class="testimonial-role">Coordinadora de Recursos Humanos</p></div>
         </div>
       </div>
       <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"Lo mejor es que no tuvimos que invertir nada. Ellos ponen la máquina y se encargan del mantenimiento. Un servicio muy profesional y puntual."</p>
+        <div class="testimonial-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <p class="testimonial-text">“Buscábamos un proveedor que se encargara de todo, desde la instalación hasta el abastecimiento y mantenimiento. Con Vending Solutions encontramos exactamente eso. La atención es rápida, las máquinas tienen una excelente presentación y nosotros no tenemos que preocuparnos por la operación diaria.”</p>
         <div class="testimonial-author">
-          <div class="testimonial-avatar">JL</div>
-          <div><p class="testimonial-name">Jorge López</p><p class="testimonial-role">Director de Operaciones · Planta industrial</p></div>
+          <div class="testimonial-avatar">CM</div>
+          <div><p class="testimonial-name">Carlos M.</p><p class="testimonial-role">Administrador de instalaciones corporativas</p></div>
         </div>
       </div>
       <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"Tenemos la máquina refrigerada en nuestra clínica y ha sido un éxito. Pacientes y personal pueden tomar algo frío en cualquier momento."</p>
+        <div class="testimonial-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <p class="testimonial-text">“Lo que más me gusta es poder comprar algo rápido durante mi jornada de trabajo. Hay buena variedad de productos, los precios son accesibles y puedo pagar con tarjeta sin necesidad de traer efectivo. Es un servicio que realmente hace más cómodo el día a día en la oficina.”</p>
         <div class="testimonial-author">
-          <div class="testimonial-avatar">AG</div>
-          <div><p class="testimonial-name">Ana García</p><p class="testimonial-role">Administradora · Clínica privada</p></div>
+          <div class="testimonial-avatar">FT</div>
+          <div><p class="testimonial-name">Fernanda T.</p><p class="testimonial-role">Colaboradora de empresa</p></div>
         </div>
       </div>
     </div>
@@ -829,7 +885,7 @@
       </div>
       <div class="faq-item">
         <div class="faq-question" onclick="toggleFaq(this)">¿Qué formas de pago aceptan las máquinas? <i class="ti ti-plus"></i></div>
-        <div class="faq-answer">Nuestras máquinas aceptan <strong>efectivo, tarjeta de crédito/débito y pagos sin contacto NFC</strong> (Apple Pay, Google Pay, etc.). Nos adaptamos a todos tus colaboradores.</div>
+        <div class="faq-answer">Nuestras máquinas aceptan <strong>efectivo y tarjeta de crédito o débito</strong>, así tus colaboradores pueden comprar sin necesidad de traer cambio.</div>
       </div>
       <div class="faq-item">
         <div class="faq-question" onclick="toggleFaq(this)">¿En qué zonas tienen cobertura? <i class="ti ti-plus"></i></div>
@@ -846,7 +902,7 @@
     <p>Instalación gratuita en menos de 48 horas. Sin contratos, sin inversión.</p>
     <div class="cta-btns">
       <a href="#contacto" class="btn-cta-yellow">Solicitar cotización gratis</a>
-      <a href="https://wa.me/525580387757?text=Hola,%20me%20interesa%20una%20máquina%20vending" target="_blank" class="btn-cta-wa"><i class="ti ti-brand-whatsapp"></i> WhatsApp</a>
+      <a href="https://wa.me/525580387757?text=Hola,%20me%20interesa%20una%20máquina%20vending" target="_blank" rel="noopener" class="btn-cta-wa"><i class="ti ti-brand-whatsapp"></i> WhatsApp</a>
       <a href="tel:+525580387757" class="btn-cta-ghost"><i class="ti ti-phone"></i> Llamar ahora</a>
     </div>
   </div>
@@ -859,7 +915,7 @@
       <div class="contact-left">
         <p class="eyebrow">CONTACTO</p>
         <h2>Solicita información o cotización</h2>
-        <p>Estamos listos para atenderte. Respuesta garantizada en menos de 2 horas en horario hábil.</p>
+        <p>Estamos listos para atenderte. Escríbenos por el medio que prefieras y te respondemos a la brevedad.</p>
         <div class="contact-items">
           <div class="contact-item">
             <div class="ci-icon"><i class="ti ti-phone"></i></div>
@@ -867,7 +923,7 @@
           </div>
           <div class="contact-item">
             <div class="ci-icon"><i class="ti ti-brand-whatsapp"></i></div>
-            <div><p class="ci-label">WhatsApp</p><p class="ci-value"><a href="https://wa.me/525580387757" target="_blank" style="color:var(--blue-mid)">+52 55 8038 7757</a></p></div>
+            <div><p class="ci-label">WhatsApp</p><p class="ci-value"><a href="https://wa.me/525580387757" target="_blank" rel="noopener" style="color:var(--blue-mid)">+52 55 8038 7757</a></p></div>
           </div>
           <div class="contact-item">
             <div class="ci-icon"><i class="ti ti-mail"></i></div>
@@ -878,35 +934,40 @@
             <div><p class="ci-label">Cobertura</p><p class="ci-value">CDMX y área metropolitana</p></div>
           </div>
         </div>
-        <img class="contact-img" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80" alt="Oficina" />
+        <img class="contact-img" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80" alt="Oficina" loading="lazy" />
       </div>
       <div class="contact-form-card">
         <h3>Envíanos un mensaje</h3>
         <p class="form-sub">Te responderemos con una cotización personalizada a la brevedad.</p>
-        <form action="https://formspree.io/f/xzdlpnrn" method="POST">
+        <form class="js-form" action="https://formspree.io/f/xzdlpnrn" method="POST">
+          <input type="hidden" name="_subject" value="Nuevo mensaje desde vendingsolutions.mx (contacto)" />
           <div class="form-row">
-            <div class="form-group"><label>Nombre</label><input type="text" name="nombre" placeholder="Tu nombre" required /></div>
-            <div class="form-group"><label>Empresa</label><input type="text" name="empresa" placeholder="Nombre de tu empresa" /></div>
+            <div class="form-group"><label for="c-nombre">Nombre</label><input id="c-nombre" type="text" name="nombre" placeholder="Tu nombre" autocomplete="name" required /></div>
+            <div class="form-group"><label for="c-empresa">Empresa</label><input id="c-empresa" type="text" name="empresa" placeholder="Nombre de tu empresa" autocomplete="organization" /></div>
           </div>
           <div class="form-row">
-            <div class="form-group"><label>Teléfono</label><input type="tel" name="telefono" placeholder="+52 55 0000 0000" /></div>
-            <div class="form-group"><label>No. de empleados</label>
-              <select name="empleados">
+            <div class="form-group"><label for="c-email">Correo electrónico</label><input id="c-email" type="email" name="email" placeholder="tu@empresa.com" autocomplete="email" required /></div>
+            <div class="form-group"><label for="c-telefono">Teléfono</label><input id="c-telefono" type="tel" name="telefono" placeholder="+52 55 0000 0000" autocomplete="tel" /></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label for="c-empleados">No. de empleados</label>
+              <select id="c-empleados" name="empleados">
                 <option value="">Selecciona</option>
                 <option>1 - 50</option><option>51 - 150</option><option>151 - 500</option><option>Más de 500</option>
               </select>
             </div>
+            <div class="form-group"><label for="c-tipo">Tipo de máquina</label>
+              <select id="c-tipo" name="tipo">
+                <option value="">Selecciona una opción</option>
+                <option>Hibou 52 Mixta</option><option>Hibou Pro Refrigerada</option><option>AMS Combo 39"</option>
+                <option>Jofemar Vision Plus</option><option>Cool Locker IMP</option><option>Vendo 821 Refresh</option>
+                <option>No sé / necesito asesoría</option>
+              </select>
+            </div>
           </div>
-          <div class="form-group"><label>Tipo de máquina</label>
-            <select name="tipo">
-              <option value="">Selecciona una opción</option>
-              <option>Hibou 52 Mixta</option><option>Hibou Pro Refrigerada</option><option>AMS Combo 39"</option>
-              <option>Jofemar Vision Plus</option><option>Cool Locker IMP</option><option>Vendo 821 Refresh</option>
-              <option>No sé / necesito asesoría</option>
-            </select>
-          </div>
-          <div class="form-group"><label>Mensaje</label><textarea name="mensaje" placeholder="Cuéntanos sobre tu empresa y qué necesitas..."></textarea></div>
+          <div class="form-group"><label for="c-mensaje">Mensaje</label><textarea id="c-mensaje" name="mensaje" placeholder="Cuéntanos sobre tu empresa y qué necesitas..."></textarea></div>
           <button type="submit" class="btn-submit"><i class="ti ti-send"></i> Enviar mensaje</button>
+          <p class="form-status" role="status"></p>
         </form>
       </div>
     </div>
@@ -917,7 +978,7 @@
 <footer>
   <div class="footer-top">
     <div>
-      <div class="footer-logo"><img src="logo.png" alt="Vending Solutions México" /></div>
+      <div class="footer-logo"><img src="img/logo.png" alt="Vending Solutions México" width="144" height="52" loading="lazy" /></div>
       <p class="footer-desc">Distribuidores de máquinas vending de botana mixta y refrigerada para negocios y corporativos en CDMX y área metropolitana.</p>
     </div>
     <div class="footer-col">
@@ -938,6 +999,7 @@
         <li><a href="#maquinas">AMS Combo 39"</a></li>
         <li><a href="#maquinas">Jofemar Vision Plus</a></li>
         <li><a href="#maquinas">Cool Locker IMP</a></li>
+        <li><a href="#maquinas">Vendo 821 Refresh</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -945,7 +1007,7 @@
       <ul>
         <li><a href="tel:+525580387757">+52 55 8038 7757</a></li>
         <li><a href="mailto:alvaroe@vendingsolutions.mx">alvaroe@vendingsolutions.mx</a></li>
-        <li><a href="https://wa.me/525580387757" target="_blank">WhatsApp</a></li>
+        <li><a href="https://wa.me/525580387757" target="_blank" rel="noopener">WhatsApp</a></li>
         <li><a href="#contacto">Cotización gratis</a></li>
       </ul>
     </div>
@@ -960,13 +1022,13 @@
 <div class="float-bar" id="floatBar">
   <p class="float-bar-text">¿Listo para instalar tu máquina vending? <span>¡Es gratis!</span></p>
   <div class="float-bar-actions">
-    <a href="https://wa.me/525580387757" target="_blank" class="fba-wa"><i class="ti ti-brand-whatsapp"></i> WhatsApp</a>
+    <a href="https://wa.me/525580387757" target="_blank" rel="noopener" class="fba-wa"><i class="ti ti-brand-whatsapp"></i> WhatsApp</a>
     <a href="#contacto" class="fba-quote">Cotización gratis</a>
   </div>
 </div>
 
 <!-- WA FLOAT -->
-<a href="https://wa.me/525580387757?text=Hola,%20me%20interesa%20una%20máquina%20vending" target="_blank" class="wa-float" aria-label="WhatsApp">
+<a href="https://wa.me/525580387757?text=Hola,%20me%20interesa%20una%20máquina%20vending" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
   <i class="ti ti-brand-whatsapp"></i>
 </a>
 
@@ -979,10 +1041,56 @@
     if (!isOpen) item.classList.add('open');
   }
 
-  // Floating bar on scroll
+  // Floating bar on scroll (oculta el botón flotante de WhatsApp mientras la barra está visible)
   const floatBar = document.getElementById('floatBar');
   window.addEventListener('scroll', () => {
-    floatBar.classList.toggle('visible', window.scrollY > 500);
+    const show = window.scrollY > 500;
+    floatBar.classList.toggle('visible', show);
+    document.body.classList.toggle('bar-visible', show);
+  }, { passive: true });
+
+  // Mobile menu
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  function setMenu(open) {
+    navLinks.classList.toggle('open', open);
+    menuBtn.setAttribute('aria-expanded', open);
+    menuBtn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    menuBtn.innerHTML = open ? '<i class="ti ti-x"></i>' : '<i class="ti ti-menu-2"></i>';
+  }
+  menuBtn.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+
+  // Hero video: solo en pantallas grandes, para no gastar datos en celular
+  const heroVideo = document.querySelector('.hero-video-wrap iframe');
+  if (heroVideo && window.matchMedia('(min-width: 901px)').matches) {
+    heroVideo.src = heroVideo.dataset.src;
+  }
+
+  // Formularios: envío sin salir de la página y mensaje en español
+  document.querySelectorAll('.js-form').forEach(form => {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const status = form.querySelector('.form-status');
+      const btn = form.querySelector('button[type="submit"]');
+      const btnHtml = btn.innerHTML;
+      btn.disabled = true;
+      btn.textContent = 'Enviando…';
+      status.className = 'form-status';
+      try {
+        const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+        if (!res.ok) throw new Error(res.status);
+        form.reset();
+        status.textContent = '¡Gracias! Recibimos tu mensaje y te contactaremos muy pronto.';
+        status.classList.add('ok');
+      } catch (err) {
+        status.innerHTML = 'No pudimos enviar tu mensaje. Inténtalo de nuevo o escríbenos por <a href="https://wa.me/525580387757" target="_blank" rel="noopener" style="text-decoration:underline">WhatsApp</a>.';
+        status.classList.add('error');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = btnHtml;
+      }
+    });
   });
 
   // Counter animation
