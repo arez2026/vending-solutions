@@ -232,6 +232,28 @@
     .proveedor-banner a { display: inline-flex; align-items: center; gap: 6px; background: white; color: var(--blue-dark); padding: 10px 22px; border-radius: var(--radius-sm); font-size: 13px; font-weight: 700; transition: opacity 0.2s; }
     .proveedor-banner a:hover { opacity: 0.9; }
 
+    /* MODALIDADES */
+    .plans-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: stretch; }
+    .plan-card { position: relative; background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; display: flex; flex-direction: column; }
+    .plan-card.featured { border: 2px solid var(--blue-mid); box-shadow: 0 16px 40px rgba(29,78,216,0.12); }
+    .plan-tag { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--blue-mid); color: white; font-size: 11px; font-weight: 800; letter-spacing: 1px; padding: 4px 14px; border-radius: 99px; white-space: nowrap; }
+    .plan-icon { width: 52px; height: 52px; border-radius: 14px; background: var(--blue-pale); color: var(--blue-mid); display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 1.25rem; }
+    .plan-card h3 { font-size: 20px; font-weight: 800; color: var(--blue-dark); margin-bottom: 0.25rem; }
+    .plan-sub { font-size: 13px; font-weight: 600; color: var(--blue-mid); margin-bottom: 0.9rem; }
+    .plan-card > p { font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.25rem; }
+    .plan-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 1.75rem; flex: 1; }
+    .plan-list li { display: flex; gap: 8px; font-size: 14px; color: var(--text); }
+    .plan-list i { color: var(--green-accent); font-size: 17px; flex-shrink: 0; margin-top: 2px; }
+    .plan-cta { display: block; text-align: center; padding: 11px; border-radius: var(--radius-sm); font-size: 14px; font-weight: 700; border: 1.5px solid var(--blue-mid); color: var(--blue-mid); transition: background 0.2s, color 0.2s; }
+    .plan-cta:hover, .plan-card.featured .plan-cta { background: var(--blue-mid); color: white; }
+    .plan-card.featured .plan-cta:hover { background: var(--blue-dark); border-color: var(--blue-dark); }
+    .plans-note { margin-top: 2rem; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; text-align: center; background: white; border: 1px dashed var(--blue-muted); border-radius: var(--radius); padding: 1.1rem 1.5rem; font-size: 14px; color: var(--text-muted); }
+    .plans-note i { font-size: 22px; color: var(--blue-mid); }
+    .plans-download { text-align: center; margin-top: 2rem; font-size: 14px; color: var(--text-muted); }
+    .plans-download a { color: var(--blue-mid); font-weight: 700; text-decoration: underline; }
+    .plans-note strong { color: var(--blue-dark); }
+    .plans-note a { color: var(--blue-mid); font-weight: 700; }
+
     /* BENEFICIOS */
     .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
     .benefit-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; text-align: center; transition: box-shadow 0.2s; }
@@ -298,7 +320,7 @@
     .btn-cta-yellow:hover { transform: translateY(-2px); }
     .btn-cta-wa { background: #25D366; color: white; padding: 14px 28px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 700; display: flex; align-items: center; gap: 8px; transition: opacity 0.2s; }
     .btn-cta-wa:hover { opacity: 0.9; }
-    .btn-cta-ghost { border: 2px solid rgba(255,255,255,0.4); color: white; padding: 14px 28px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 600; transition: border-color 0.2s; }
+    .btn-cta-ghost { border: 2px solid rgba(255,255,255,0.4); color: white; padding: 14px 28px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 600; transition: border-color 0.2s; display: flex; align-items: center; gap: 8px; }
     .btn-cta-ghost:hover { border-color: white; }
 
     /* CONTACTO */
@@ -325,6 +347,8 @@
     .form-group textarea { resize: vertical; min-height: 100px; }
     .btn-submit { width: 100%; background: var(--blue-mid); color: white; border: none; padding: 14px; border-radius: var(--radius-sm); font-size: 15px; font-weight: 800; cursor: pointer; font-family: inherit; transition: background 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px; }
     .btn-submit:hover { background: var(--blue-dark); }
+    .form-legal { font-size: 12px; color: var(--text-muted); text-align: center; margin-top: 10px; }
+    .form-legal a { color: var(--blue-mid); text-decoration: underline; }
 
     /* FOOTER */
     footer { background: #060e2e; color: rgba(255,255,255,0.5); padding: 4rem 2rem 2rem; }
@@ -358,6 +382,7 @@
     @media (max-width: 1024px) {
       .catalog-grid { grid-template-columns: repeat(2, 1fr); }
       .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+      .nav-phone { display: none; }
     }
     @media (max-width: 900px) {
       .hero-content { grid-template-columns: 1fr; gap: 2.5rem; padding: 0 1.25rem; }
@@ -367,6 +392,7 @@
       .process-wrap { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
       .process-wrap::before { display: none; }
       .clients-grid { grid-template-columns: 1fr 1fr; }
+      .plans-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; gap: 2rem; }
       .testimonials-grid { grid-template-columns: 1fr; }
       .sectors-grid { grid-template-columns: repeat(2, 1fr); }
       .contact-grid { grid-template-columns: 1fr; }
@@ -413,8 +439,8 @@
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#maquinas">Máquinas</a></li>
+      <li><a href="#modalidades">Modalidades</a></li>
       <li><a href="#beneficios">Beneficios</a></li>
-      <li><a href="#proceso">Cómo funciona</a></li>
       <li><a href="#clientes">Clientes</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contacto">Contacto</a></li>
@@ -438,7 +464,7 @@
     <div class="hero-left">
       <div class="hero-badge"><i class="ti ti-map-pin" style="font-size:12px"></i> CDMX y Área Metropolitana</div>
       <h1>Máquinas vending para tu <span>empresa o corporativo</span></h1>
-      <p class="hero-desc">Distribuimos e instalamos máquinas de botana mixta y refrigerada en tu empresa. Sin inversión, sin contratos, sin complicaciones.</p>
+      <p class="hero-desc">Distribuimos e instalamos máquinas de botana mixta y refrigerada en tu empresa. En comodato sin inversión, en renta o en venta, con factura.</p>
       <div class="hero-btns">
         <a href="#contacto" class="btn-hero-primary">Solicitar cotización gratis</a>
         <a href="https://wa.me/525580387757?text=Hola,%20me%20interesa%20una%20máquina%20vending" target="_blank" rel="noopener" class="btn-hero-wa"><i class="ti ti-brand-whatsapp"></i> WhatsApp</a>
@@ -469,7 +495,7 @@
         <button type="submit">Enviar cotización <i class="ti ti-arrow-right"></i></button>
         <p class="form-status" role="status"></p>
       </form>
-      <p class="hero-card-note"><i class="ti ti-lock" style="font-size:11px"></i> Tus datos están seguros. Sin spam.</p>
+      <p class="hero-card-note"><i class="ti ti-lock" style="font-size:11px"></i> Al enviar aceptas nuestro <a href="aviso-de-privacidad.html" style="text-decoration:underline">Aviso de Privacidad</a>.</p>
     </div>
   </div>
 </div>
@@ -491,7 +517,7 @@
     </div>
     <div class="stat-item">
       <div class="stat-num">$0</div>
-      <div class="stat-label">Inversión inicial</div>
+      <div class="stat-label">Inversión en comodato</div>
     </div>
   </div>
 </div>
@@ -503,6 +529,7 @@
     <div class="trust-item"><i class="ti ti-tools"></i> Mantenimiento sin costo</div>
     <div class="trust-item"><i class="ti ti-refresh"></i> Surtido constante</div>
     <div class="trust-item"><i class="ti ti-credit-card"></i> Efectivo y tarjeta</div>
+    <div class="trust-item"><i class="ti ti-file-invoice"></i> Facturamos (CFDI)</div>
     <div class="trust-item"><i class="ti ti-brand-whatsapp"></i> Atención por WhatsApp</div>
   </div>
 </div>
@@ -661,6 +688,61 @@
     <a href="https://coincitymexico.com" target="_blank" rel="noopener"><i class="ti ti-external-link"></i> Ver catálogo completo</a>
   </div>
 </div>
+
+<!-- MODALIDADES -->
+<section class="section" id="modalidades">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">MODALIDADES DE SERVICIO</p>
+      <h2 class="section-title">Elige cómo quieres tu máquina</h2>
+      <p class="section-desc">Nos adaptamos a tu empresa: la instalamos sin costo, te la rentamos o te la vendemos. En todos los casos emitimos factura.</p>
+    </div>
+    <div class="plans-grid">
+      <div class="plan-card featured">
+        <span class="plan-tag">LA MÁS SOLICITADA</span>
+        <div class="plan-icon"><i class="ti ti-gift"></i></div>
+        <h3>Comodato</h3>
+        <p class="plan-sub">Sin inversión para tu empresa</p>
+        <p>Instalamos la máquina en tus instalaciones sin costo. Nosotros la surtimos, le damos mantenimiento y operamos la venta.</p>
+        <ul class="plan-list">
+          <li><i class="ti ti-check"></i> Tú solo aportas el espacio</li>
+          <li><i class="ti ti-check"></i> Surtido y mantenimiento incluidos</li>
+          <li><i class="ti ti-check"></i> Ideal para oficinas y plantas con flujo constante</li>
+        </ul>
+        <a href="#contacto" class="plan-cta" data-modalidad="Comodato">Solicitar comodato</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-icon"><i class="ti ti-calendar-repeat"></i></div>
+        <h3>Renta</h3>
+        <p class="plan-sub">Pago mensual fijo</p>
+        <p>Rentas el equipo y tú decides qué productos ofrecer y a qué precio, incluso si quieres subsidiarlos para tu equipo.</p>
+        <ul class="plan-list">
+          <li><i class="ti ti-check"></i> Eliges el modelo de máquina</li>
+          <li><i class="ti ti-check"></i> Control sobre el surtido y precios</li>
+          <li><i class="ti ti-check"></i> Asesoría de nuestro equipo</li>
+        </ul>
+        <a href="#contacto" class="plan-cta" data-modalidad="Renta">Cotizar renta</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-icon"><i class="ti ti-shopping-bag"></i></div>
+        <h3>Venta</h3>
+        <p class="plan-sub">Equipo propio</p>
+        <p>Adquiere tu máquina nueva de marcas líderes como Hibou, AMS, Jofemar y Vendo, con asesoría para elegir el modelo ideal.</p>
+        <ul class="plan-list">
+          <li><i class="ti ti-check"></i> Equipo nuevo de marcas reconocidas</li>
+          <li><i class="ti ti-check"></i> Te ayudamos a elegir el modelo</li>
+          <li><i class="ti ti-check"></i> Factura CFDI</li>
+        </ul>
+        <a href="#contacto" class="plan-cta" data-modalidad="Venta">Cotizar compra</a>
+      </div>
+    </div>
+    <p class="plans-download"><a href="presentacion-vending-solutions.pdf" download><i class="ti ti-file-download"></i> Descarga nuestra presentación comercial en PDF</a> para compartirla con tu equipo.</p>
+    <div class="plans-note">
+      <i class="ti ti-percentage"></i>
+      <span><strong>¿Tu empresa tiene alto volumen de personas?</strong> Contamos con esquemas de comisión para casos especiales. <a href="#contacto" data-modalidad="Esquema de comisión">Pregúntanos →</a></span>
+    </div>
+  </div>
+</section>
 
 <!-- BENEFICIOS -->
 <section class="section section-alt" id="beneficios">
@@ -864,8 +946,16 @@
     </div>
     <div class="faq-list">
       <div class="faq-item open">
-        <div class="faq-question" onclick="toggleFaq(this)">¿Cuánto cuesta instalar una máquina vending? <i class="ti ti-plus"></i></div>
-        <div class="faq-answer">La instalación es completamente <strong>gratuita</strong>. No pagas nada por la máquina, el traslado ni la instalación. Solo necesitas ceder el espacio físico en tu empresa.</div>
+        <div class="faq-question" onclick="toggleFaq(this)">¿Cuánto cuesta tener una máquina vending? <i class="ti ti-plus"></i></div>
+        <div class="faq-answer">Depende de la modalidad. En <strong>comodato</strong> no pagas nada: nosotros ponemos la máquina, la surtimos y le damos mantenimiento; solo necesitas ceder el espacio. En <strong>renta</strong> pagas una mensualidad fija y en <strong>venta</strong> adquieres el equipo. Te enviamos una cotización a la medida.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">¿Emiten factura? <i class="ti ti-plus"></i></div>
+        <div class="faq-answer">Sí. Emitimos <strong>factura electrónica (CFDI)</strong> por la renta, la venta de equipo y los servicios que contrates con nosotros.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">¿Manejan esquemas de comisión? <i class="ti ti-plus"></i></div>
+        <div class="faq-answer">En casos especiales, como empresas o espacios con alto flujo de personas, podemos ofrecer un esquema de comisión sobre las ventas. Cuéntanos sobre tu espacio y lo evaluamos contigo.</div>
       </div>
       <div class="faq-item">
         <div class="faq-question" onclick="toggleFaq(this)">¿Hay contrato o plazo mínimo forzoso? <i class="ti ti-plus"></i></div>
@@ -904,6 +994,7 @@
       <a href="#contacto" class="btn-cta-yellow">Solicitar cotización gratis</a>
       <a href="https://wa.me/525580387757?text=Hola,%20me%20interesa%20una%20máquina%20vending" target="_blank" rel="noopener" class="btn-cta-wa"><i class="ti ti-brand-whatsapp"></i> WhatsApp</a>
       <a href="tel:+525580387757" class="btn-cta-ghost"><i class="ti ti-phone"></i> Llamar ahora</a>
+      <a href="presentacion-vending-solutions.pdf" download class="btn-cta-ghost"><i class="ti ti-file-download"></i> Descargar presentación (PDF)</a>
     </div>
   </div>
 </div>
@@ -965,8 +1056,16 @@
               </select>
             </div>
           </div>
+          <div class="form-group"><label for="c-modalidad">Modalidad de interés</label>
+            <select id="c-modalidad" name="modalidad">
+              <option value="">Selecciona una opción</option>
+              <option>Comodato</option><option>Renta</option><option>Venta</option>
+              <option>Esquema de comisión</option><option>Aún no lo sé</option>
+            </select>
+          </div>
           <div class="form-group"><label for="c-mensaje">Mensaje</label><textarea id="c-mensaje" name="mensaje" placeholder="Cuéntanos sobre tu empresa y qué necesitas..."></textarea></div>
           <button type="submit" class="btn-submit"><i class="ti ti-send"></i> Enviar mensaje</button>
+          <p class="form-legal">Al enviar este formulario aceptas nuestro <a href="aviso-de-privacidad.html">Aviso de Privacidad</a>.</p>
           <p class="form-status" role="status"></p>
         </form>
       </div>
@@ -1014,7 +1113,7 @@
   </div>
   <div class="footer-bottom">
     <span>© 2026 Vending Solutions México · Todos los derechos reservados</span>
-    <span>CDMX y área metropolitana</span>
+    <span><a href="aviso-de-privacidad.html" style="text-decoration:underline">Aviso de Privacidad</a> · CDMX y área metropolitana</span>
   </div>
 </footer>
 
@@ -1048,6 +1147,14 @@
     floatBar.classList.toggle('visible', show);
     document.body.classList.toggle('bar-visible', show);
   }, { passive: true });
+
+  // Botones de modalidad: preseleccionan la opción en el formulario de contacto
+  document.querySelectorAll('[data-modalidad]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const sel = document.getElementById('c-modalidad');
+      if (sel) sel.value = btn.dataset.modalidad;
+    });
+  });
 
   // Mobile menu
   const menuBtn = document.getElementById('menuBtn');

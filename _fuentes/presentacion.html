@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Vending Solutions México — Presentación comercial</title>
+<!-- Fuente de presentacion-vending-solutions.pdf. Regenerar con:
+     "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --no-pdf-header-footer \
+       --virtual-time-budget=8000 --print-to-pdf=presentacion-vending-solutions.pdf _fuentes/presentacion.html -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  @page { size: letter; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --dark: #0D2472; --mid: #1D4ED8; --pale: #DBEAFE; --soft: #F0F4FF; --yellow: #FDE047; --green: #22C55E; --text: #111827; --muted: #4b5563; --border: #e5e7eb; }
+  html, body { font-family: 'Inter', sans-serif; color: var(--text); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { width: 8.5in; height: 11in; position: relative; overflow: hidden; page-break-after: always; break-after: page; }
+  .page:last-child { page-break-after: auto; break-after: auto; }
+  .pad { padding: 0.65in 0.7in; }
+  .eyebrow { font-size: 10px; font-weight: 800; letter-spacing: 2px; color: var(--mid); margin-bottom: 6px; }
+  h2 { font-size: 24px; font-weight: 800; color: var(--dark); line-height: 1.2; margin-bottom: 6px; }
+  .lead { font-size: 12.5px; color: var(--muted); line-height: 1.6; margin-bottom: 18px; }
+  .foot { position: absolute; left: 0.7in; right: 0.7in; bottom: 0.4in; display: flex; justify-content: space-between; font-size: 9px; color: #9ca3af; border-top: 1px solid var(--border); padding-top: 8px; }
+
+  /* PORTADA */
+  .cover { background: var(--dark); color: white; }
+  .cover-top { background: white; padding: 0.55in 0.7in 0.45in; display: flex; align-items: center; justify-content: space-between; }
+  .cover-top img { height: 78px; }
+  .cover-top span { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--mid); }
+  .cover-body { padding: 0.6in 0.7in 0; display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 0.3in; align-items: center; }
+  .cover h1 { font-size: 38px; font-weight: 800; line-height: 1.12; margin-bottom: 16px; }
+  .cover h1 span { color: var(--yellow); }
+  .cover p.sub { font-size: 14px; line-height: 1.65; color: rgba(255,255,255,0.8); margin-bottom: 24px; }
+  .cover-mascot { width: 100%; background: white; border-radius: 24px; padding: 18px; }
+  .cover-points { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 18px; }
+  .cover-points div { font-size: 12.5px; color: white; display: flex; gap: 8px; align-items: flex-start; }
+  .cover-points b { color: var(--green); font-size: 14px; line-height: 1.2; }
+  .cover-stats { margin: 0.5in 0.7in 0; display: grid; grid-template-columns: repeat(3, 1fr); background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 14px; }
+  .cover-stats div { padding: 18px; text-align: center; }
+  .cover-stats div + div { border-left: 1px solid rgba(255,255,255,0.14); }
+  .cover-stats strong { display: block; font-size: 30px; font-weight: 800; color: var(--yellow); line-height: 1.1; }
+  .cover-stats span { font-size: 11px; color: rgba(255,255,255,0.7); }
+  .about { margin: 0.45in 0.7in 0; background: white; color: var(--text); border-radius: 14px; padding: 22px 26px; }
+  .about h3 { font-size: 14px; font-weight: 800; color: var(--dark); margin-bottom: 6px; }
+  .about p { font-size: 12px; color: var(--muted); line-height: 1.65; }
+  .cover .foot { color: rgba(255,255,255,0.5); border-color: rgba(255,255,255,0.15); }
+
+  /* MODALIDADES */
+  .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 26px; }
+  .plan { border: 1px solid var(--border); border-radius: 12px; padding: 18px 16px; position: relative; }
+  .plan.featured { border: 2px solid var(--mid); background: var(--soft); }
+  .plan .tag { position: absolute; top: -9px; left: 16px; background: var(--mid); color: white; font-size: 8px; font-weight: 800; letter-spacing: 1px; padding: 3px 9px; border-radius: 99px; }
+  .plan h3 { font-size: 17px; font-weight: 800; color: var(--dark); }
+  .plan .s { font-size: 10.5px; font-weight: 700; color: var(--mid); margin-bottom: 8px; }
+  .plan p { font-size: 10.5px; color: var(--muted); line-height: 1.55; margin-bottom: 8px; }
+  .plan ul { list-style: none; }
+  .plan li { font-size: 10.5px; padding-left: 15px; position: relative; margin-bottom: 4px; }
+  .plan li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 800; }
+  .commission { background: var(--soft); border: 1px dashed #93C5FD; border-radius: 12px; padding: 12px 16px; font-size: 11px; color: var(--muted); margin-bottom: 30px; }
+  .commission strong { color: var(--dark); }
+
+  .benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 30px; }
+  .benefit { background: var(--soft); border-radius: 10px; padding: 14px; }
+  .benefit h4 { font-size: 12px; font-weight: 800; color: var(--dark); margin-bottom: 4px; }
+  .benefit p { font-size: 10.5px; color: var(--muted); line-height: 1.5; }
+
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .step { text-align: center; }
+  .step .n { width: 34px; height: 34px; border-radius: 50%; background: var(--mid); color: white; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px; }
+  .step h4 { font-size: 11.5px; font-weight: 800; color: var(--dark); margin-bottom: 3px; }
+  .step p { font-size: 10px; color: var(--muted); line-height: 1.45; }
+
+  /* CATÁLOGO */
+  .catalog { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 18px; }
+  .machine { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  .machine .ph { height: 1.3in; background: #F3F4F6; display: flex; align-items: center; justify-content: center; padding: 8px; }
+  .machine .ph img { max-height: 100%; max-width: 100%; object-fit: contain; }
+  .machine .b { padding: 10px 12px 12px; }
+  .machine .brand { font-size: 8.5px; font-weight: 800; letter-spacing: 1px; color: var(--mid); }
+  .machine h4 { font-size: 12px; font-weight: 800; color: var(--dark); margin: 2px 0 3px; }
+  .machine p { font-size: 9.5px; color: var(--muted); line-height: 1.45; }
+
+  .clients { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 18px; }
+  .client { border: 1px solid var(--border); border-radius: 12px; height: 0.8in; display: flex; align-items: center; justify-content: center; padding: 10px; }
+  .client img { max-height: 100%; max-width: 100%; object-fit: contain; }
+  .client.dark { background: #1a1a1a; }
+  .quote { background: var(--soft); border-radius: 12px; padding: 14px 18px; font-size: 11px; color: var(--text); line-height: 1.6; font-style: italic; margin-bottom: 14px; }
+  .quote span { display: block; font-style: normal; font-size: 10px; font-weight: 700; color: var(--dark); margin-top: 6px; }
+
+  .contact { background: var(--dark); color: white; border-radius: 14px; padding: 20px 24px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 16px; align-items: center; }
+  .contact h3 { font-size: 18px; font-weight: 800; line-height: 1.25; }
+  .contact h3 span { color: var(--yellow); }
+  .contact ul { list-style: none; font-size: 11.5px; }
+  .contact li { margin-bottom: 5px; }
+  .contact li b { color: #93C5FD; font-weight: 600; display: inline-block; width: 70px; }
+</style>
+</head>
+<body>
+
+<!-- PÁGINA 1: PORTADA -->
+<section class="page cover">
+  <div class="cover-top">
+    <img src="../img/logo.png" alt="Vending Solutions México" />
+    <span>PRESENTACIÓN COMERCIAL 2026</span>
+  </div>
+  <div class="cover-body">
+    <div>
+      <h1>Máquinas vending para tu <span>empresa o corporativo</span></h1>
+      <p class="sub">Instalamos, surtimos y damos mantenimiento a máquinas de botana mixta y refrigerada en tu empresa. En comodato sin inversión, en renta o en venta, con factura.</p>
+      <div class="cover-points">
+        <div><b>✓</b> Comodato sin inversión</div>
+        <div><b>✓</b> Mantenimiento incluido</div>
+        <div><b>✓</b> Surtido constante</div>
+        <div><b>✓</b> Facturamos (CFDI)</div>
+        <div><b>✓</b> Efectivo y tarjeta</div>
+        <div><b>✓</b> CDMX y área metropolitana</div>
+      </div>
+    </div>
+    <img class="cover-mascot" src="../img/icon-512.png" alt="" />
+  </div>
+  <div class="cover-stats">
+    <div><strong>+50</strong><span>clientes satisfechos</span></div>
+    <div><strong>6</strong><span>modelos de máquina</span></div>
+    <div><strong>3</strong><span>modalidades: comodato, renta y venta</span></div>
+  </div>
+  <div class="about">
+    <h3>Quiénes somos</h3>
+    <p>Vending Solutions México es una empresa distribuidora de máquinas expendedoras para negocios y corporativos. Trabajamos con equipos de marcas líderes como Hibou, AMS, Jofemar y Vendo, y nos encargamos de toda la operación —instalación, surtido y mantenimiento— para que tus colaboradores tengan snacks y bebidas a la mano sin que tu empresa se preocupe por nada.</p>
+  </div>
+  <div class="foot"><span>vendingsolutions.mx</span><span>01</span></div>
+</section>
+
+<!-- PÁGINA 2: MODALIDADES, BENEFICIOS Y PROCESO -->
+<section class="page pad">
+  <p class="eyebrow">MODALIDADES DE SERVICIO</p>
+  <h2>Elige cómo quieres tu máquina</h2>
+  <p class="lead">Nos adaptamos a las necesidades y al presupuesto de tu empresa. En todos los casos emitimos factura electrónica (CFDI).</p>
+  <div class="plans">
+    <div class="plan featured">
+      <span class="tag">LA MÁS SOLICITADA</span>
+      <h3>Comodato</h3>
+      <p class="s">Sin inversión para tu empresa</p>
+      <p>Instalamos la máquina sin costo. Nosotros la surtimos, le damos mantenimiento y operamos la venta.</p>
+      <ul><li>Tú solo aportas el espacio</li><li>Surtido y mantenimiento incluidos</li><li>Ideal para flujo constante de personas</li></ul>
+    </div>
+    <div class="plan">
+      <h3>Renta</h3>
+      <p class="s">Pago mensual fijo</p>
+      <p>Rentas el equipo y tú decides qué productos ofrecer y a qué precio, incluso si quieres subsidiarlos.</p>
+      <ul><li>Eliges el modelo de máquina</li><li>Control sobre surtido y precios</li><li>Asesoría de nuestro equipo</li></ul>
+    </div>
+    <div class="plan">
+      <h3>Venta</h3>
+      <p class="s">Equipo propio</p>
+      <p>Adquiere tu máquina nueva de marcas líderes, con asesoría para elegir el modelo ideal.</p>
+      <ul><li>Equipo nuevo de marcas reconocidas</li><li>Te ayudamos a elegir el modelo</li><li>Factura CFDI</li></ul>
+    </div>
+  </div>
+  <div class="commission"><strong>¿Tu empresa tiene alto volumen de personas?</strong> Contamos con esquemas de comisión sobre ventas para casos especiales. Pregúntanos y lo evaluamos contigo.</div>
+
+  <p class="eyebrow">BENEFICIOS</p>
+  <h2>¿Por qué elegirnos?</h2>
+  <p class="lead">Nos encargamos de toda la operación para que tu empresa solo disfrute el servicio.</p>
+  <div class="benefits">
+    <div class="benefit"><h4>Cero inversión en comodato</h4><p>La máquina, el traslado y la instalación corren por nuestra cuenta.</p></div>
+    <div class="benefit"><h4>Mantenimiento incluido</h4><p>Limpieza, reparaciones y servicio técnico sin costo adicional.</p></div>
+    <div class="benefit"><h4>Surtido constante</h4><p>Reabastecemos periódicamente para que nunca falten productos.</p></div>
+    <div class="benefit"><h4>Efectivo y tarjeta</h4><p>Tus colaboradores compran sin necesidad de traer cambio.</p></div>
+    <div class="benefit"><h4>Surtido a tu medida</h4><p>Snacks, bebidas o alimentos frescos según los gustos de tu equipo.</p></div>
+    <div class="benefit"><h4>Factura electrónica</h4><p>Emitimos CFDI por renta, venta de equipo y servicios.</p></div>
+  </div>
+
+  <p class="eyebrow">CÓMO FUNCIONA</p>
+  <h2>Instalado en 4 pasos</h2>
+  <p class="lead">Un proceso simple, sin trámites complicados.</p>
+  <div class="steps">
+    <div class="step"><div class="n">1</div><h4>Nos contactas</h4><p>Cuéntanos el tamaño de tu empresa y el espacio disponible.</p></div>
+    <div class="step"><div class="n">2</div><h4>Cotización</h4><p>Te enviamos una propuesta a la medida, sin compromiso.</p></div>
+    <div class="step"><div class="n">3</div><h4>Instalación</h4><p>Instalamos y surtimos la máquina en tus instalaciones.</p></div>
+    <div class="step"><div class="n">4</div><h4>¡Listo!</h4><p>Tu equipo disfruta y nosotros gestionamos todo.</p></div>
+  </div>
+  <div class="foot"><span>Vending Solutions México · Presentación comercial</span><span>02</span></div>
+</section>
+
+<!-- PÁGINA 3: CATÁLOGO, CLIENTES Y CONTACTO -->
+<section class="page pad">
+  <p class="eyebrow">CATÁLOGO</p>
+  <h2>Nuestras máquinas</h2>
+  <p class="lead">Equipos de marcas líderes, disponibles en comodato, renta o venta.</p>
+  <div class="catalog">
+    <div class="machine"><div class="ph"><img src="../img/hibou-52-mixta.webp" alt="" /></div><div class="b"><div class="brand">HIBOU</div><h4>Hibou 52 Mixta</h4><p>Snacks con 52 posiciones. Ideal para oficinas de cualquier tamaño.</p></div></div>
+    <div class="machine"><div class="ph"><img src="../img/hibou-pro-refrigerada.webp" alt="" /></div><div class="b"><div class="brand">HIBOU</div><h4>Hibou Pro + Touch 22"</h4><p>Refrigerada con pantalla táctil para bebidas, lácteos y frescos.</p></div></div>
+    <div class="machine"><div class="ph"><img src="../img/ams-combo-39.webp" alt="" /></div><div class="b"><div class="brand">AMS</div><h4>Combo 39"</h4><p>Snacks y bebidas en un solo equipo de alta capacidad.</p></div></div>
+    <div class="machine"><div class="ph"><img src="../img/jofemar-vision-plus.webp" alt="" /></div><div class="b"><div class="brand">JOFEMAR</div><h4>Vision Plus Refrigerada</h4><p>Alta gama para alimentos frescos, ensaladas y bebidas.</p></div></div>
+    <div class="machine"><div class="ph"><img src="../img/cool-locker.webp" alt="" /></div><div class="b"><div class="brand">IMP</div><h4>Cool Locker 20 Celdas</h4><p>Casilleros refrigerados para hospitales, gimnasios y hoteles.</p></div></div>
+    <div class="machine"><div class="ph"><img src="../img/vendo-821-refresh.webp" alt="" /></div><div class="b"><div class="brand">VENDO</div><h4>821 Refresh</h4><p>Bebidas frías en lata y botella para áreas de alto tráfico.</p></div></div>
+  </div>
+
+  <p class="eyebrow">CLIENTES</p>
+  <h2>Empresas que confían en nosotros</h2>
+  <div class="clients" style="margin-top:12px">
+    <div class="client"><img src="../img/palacio.png" alt="El Palacio de Hierro" /></div>
+    <div class="client"><img src="../img/wolfsellers.svg" alt="WolfSellers" /></div>
+    <div class="client dark"><img src="../img/hacienda-club.png" alt="Club de Golf La Hacienda" /></div>
+  </div>
+  <div class="quote">“Buscábamos un proveedor que se encargara de todo, desde la instalación hasta el abastecimiento y mantenimiento. Con Vending Solutions encontramos exactamente eso.”<span>Carlos M. — Administrador de instalaciones corporativas</span></div>
+
+  <div class="contact">
+    <h3>Solicita tu cotización <span>sin compromiso</span></h3>
+    <ul>
+      <li><b>Teléfono</b> +52 55 8038 7757</li>
+      <li><b>WhatsApp</b> +52 55 8038 7757</li>
+      <li><b>Correo</b> alvaroe@vendingsolutions.mx</li>
+      <li><b>Web</b> vendingsolutions.mx</li>
+    </ul>
+  </div>
+  <div class="foot"><span>Vending Solutions México · CDMX y área metropolitana</span><span>03</span></div>
+</section>
+
+</body>
+</html>
